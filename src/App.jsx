@@ -10,6 +10,7 @@ function App() {
   const interval = 2000;
   
   useEffect(()=>{
+    console.log("fetching data")
     setInterval(() => {
       axios.get("https://sum-server.100xdevs.com/todos")
         .then(async function(res){
