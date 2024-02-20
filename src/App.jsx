@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,11 +11,15 @@ function App() {
   
   useEffect(()=>{
     setInterval(() => {
-      fetch("https://sum-server.100xdevs.com/todos")
-      .then(async function(res){
-        const json = await res.json();
-        setTodos(json.todos);
-      })
+      axios.get("https://sum-server.100xdevs.com/todos")
+        .then(async function(res){
+          setTodos(res.data.todos);
+        })
+      // fetch("https://sum-server.100xdevs.com/todos")
+      //   .then(async function(res){
+      //     const json = await res.json();
+      //     setTodos(json.todos);
+      //   })
     }, interval); 
   }, [])
 
