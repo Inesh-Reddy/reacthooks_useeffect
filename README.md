@@ -13,7 +13,19 @@ If you want the effect to only run once after the initial render, you can pass a
 
 useEffect can also return a cleanup function, which will be executed when the component unmounts or when the dependencies change and the effect re-runs.
 
-It's important to manage side effects with useEffect to prevent memory leaks and ensure your component behaves as expected across different rendering cycles.
+It's important to manage `side effects` with useEffect to prevent memory leaks and ensure your component behaves as expected across different rendering cycles.
+
+
+## Side Effects
+
+- In React, the concept of side effect encompasses any operation that reach outside the fuctional scope of the React component. These operations can affect other components, interact with the browser, or perform asynchoronous data fetching.
+
+Examples: 
+    
+- SetTimeout
+- fetch
+- setinterval
+- document.getElementById("").innerHTML = "".
 
 
         import { useEffect, useState } from 'react'
